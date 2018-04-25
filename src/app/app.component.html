@@ -1,4 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-menu-bar></app-menu-bar>
-<router-outlet></router-outlet>
-
+<div *ngIf="isLoggedIn">
+	<app-menu-bar ></app-menu-bar>
+	<router-outlet></router-outlet>
+</div>
+<div *ngIf="!isLoggedIn">
+	<router-outlet></router-outlet>
+</div>

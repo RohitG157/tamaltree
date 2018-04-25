@@ -1,0 +1,2 @@
+install firebase and angularfirebase sdk
+npm install --save firebase@^4.4.0 angularfire2@^5.0.0-rc.2
