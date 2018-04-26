@@ -15,7 +15,8 @@ export class AppComponent {
 
   checkUserLoggedIn() {
   	let loggedIn = localStorage.getItem('loggedIn');
-  	if(loggedIn) {
+    console.log(typeof(loggedIn));
+  	if(loggedIn == "true") {
   		this.isLoggedIn = true;
   		this.router.navigate(['home']);
   	} else {

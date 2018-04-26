@@ -1,18 +1,26 @@
 <div id="signin-page">
 	<div class="page-form">
-	    <form action="index.html" class="form">
+	    <form [formGroup]='loginForm' class="form" (ngSubmit)="authenticate(loginForm)">
 	        <div class="header-content"><h1>Log In</h1></div>
 	        <div class="body-content">
 
 	            
 	            <div class="form-group">
-	                <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="Username"
-	                                                                               name="username" class="form-control">
+	                <div class="input-icon right"><i class="fa fa-user"></i><input type="text" id="email" placeholder="Username" formControlName="email" class="form-control">
+	                </div>
+	                <div *ngIf="loginForm.controls['email'].touched && !loginForm.controls['email'].valid">
+	                	<span *ngIf="loginForm.controls['email'].hasError('required')">
+	                		Email Field is Required
+	                	</span>
 	                </div>
 	            </div>
 	            <div class="form-group">
-	                <div class="input-icon right"><i class="fa fa-key"></i><input type="password" placeholder="Password"
-	                                                                              name="password" class="form-control">
+	                <div class="input-icon right"><i class="fa fa-key"></i><input type="password" placeholder="Password" formControlName="password" class="form-control">
+	                </div>
+	                <div *ngIf="loginForm.controls['password'].touched && !loginForm.controls['password'].valid">
+	                	<span *ngIf="loginForm.controls['password'].hasError('required')">
+	                		Password Field is Required
+	                	</span>
 	                </div>
 	            </div>
 	            
